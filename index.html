@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Objectives App</title>
+	<style>
+	body{
+		width:100%;
+		height:100%;
+		margin:0;
+		padding:0;
+		font-size:200%;
+		display:flex;
+	}
+	.left{
+		width:47%;
+		background-color:rgba(250,250,250,0.3);
+		height:400px;
+		padding:1%;
+	}
+	.right{
+		width:47%;
+		background-color:rgba(250,250,250,0.3);
+		height:400px;
+		padding:1%;
+	}
+	div{
+		overflow:hidden;
+		font-family:futura;
+		border-right:1px solid black;
+	}
+	</style>
+	<script src="./d3.js"></script>
+
+</head>
+<body>
+<div class="left">left</div>
+<div class="right">right</div>
+
+	<script>
+	d3.selectAll('div').on('click',function(d,i){
+		console.log('clicked');
+		d3.selectAll('.left').style('font-family','times');
+	});
+	</script>
+	
+</body>
+</html>
