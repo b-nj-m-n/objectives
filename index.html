@@ -15,6 +15,8 @@
 	.left{
 		width:47%;
 		background-color:rgba(250,250,250,0.3);
+		border-right:none;
+		border-left:10px;
 		height:400px;
 		padding:1%;
 	}
@@ -43,6 +45,14 @@
 		d3.selectAll('.left').style('font-family','times');
 	});
 	d3.selectAll('div').attr('contentEditable',true);
+	d3.select('body').on('keydown',function(d,i,e){
+		console.log(d,i,e,this);
+		console.log(d3.event);
+		d3.select('.right').text(d3.select('.left').node().innerText);
+		if (d3.event.keyIdentifier == 'Enter'){
+			d3.select('.left').text += 'lol';
+		}
+	})
 	</script>
 	
 </body>
