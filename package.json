@@ -1,0 +1,26 @@
+{
+  "name": "Objectives",
+  "version": "0.0.1",
+  "description": "To Do Application",
+  "main": "main.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bnjm/objectives.git"
+  },
+  "keywords": [
+    "react",
+    "d3.js",
+    "productivity"
+  ],
+  "author": "Benjamin Devine",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bnjm/objectives/issues"
+  },
+  "homepage": "https://github.com/bnjm/objectives"
+}
