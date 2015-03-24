@@ -1,27 +1,26 @@
 {
   "name": "Objectives",
   "version": "0.0.1",
-  "description": "Productivity App",
+  "description": "To Do Application",
   "main": "main.js",
+  "dependencies": {},
+  "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "start"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/b-nj-m-n/objectives.git"
+    "url": "https://github.com/bnjm/objectives.git"
   },
+  "keywords": [
+    "react",
+    "d3.js",
+    "productivity"
+  ],
   "author": "Benjamin Devine",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/b-nj-m-n/objectives/issues"
+    "url": "https://github.com/bnjm/objectives/issues"
   },
-  "homepage": "https://github.com/b-nj-m-n/objectives",
-  "devDependencies": {
-    "gulp": "^3.8.11",
-    "gulp-concat": "^2.4.3",
-    "gulp-jshint": "^1.9.2",
-    "gulp-react": "^2.0.0",
-    "gulp-uglify": "^1.1.0",
-    "gulp-watch": "^4.1.1"
-  }
+  "homepage": "https://github.com/bnjm/objectives"
 }
