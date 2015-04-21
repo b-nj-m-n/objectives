@@ -61,7 +61,7 @@
 		d3.selectAll('.left').style('font-family','times');
 	});
 	d3.selectAll('div').attr('contentEditable',true);
-	d3.select('body').on('keydown',function(d,i,e){
+	d3.select('body').on('keyup',function(d,i,e){
 		console.log(d,i,e,this);
 		console.log(d3.event);
 		d3.select('.right').text(d3.select('.left').node().innerText);
