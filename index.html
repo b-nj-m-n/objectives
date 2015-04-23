@@ -22,53 +22,64 @@
 	<style>
 	body{
 		width:100%;
-		height:100%;
+		height:100vh;
 		margin:0;
 		padding:0;
 		font-size:200%;
 		display:flex
 	}
 	.left{
-		width:47%;
+		width:100%;
+		height:100%;
 		background-color:rgba(250,250,250,0.3);
 		border-right:none;
 		border-left:10px;
-		height:400px;
+
 		padding:1%;
 	}
-	.right{
-		width:47%;
-		background-color:rgba(250,250,250,0.3);
-		height:400px;
-		padding:1%;
+	::selection{
+
+		color:white;
+		background-color:red;
+
 	}
 	div{
 		overflow:hidden;
 		font-family:futura;
 		border-right:1px solid black;
 	}
+	div.item span {
+		display:inline-block;
+		text-align:right;
+		transform:rotate(90deg);
+	}
+	.item {
+		text-align:center;
+	}
 	</style>
 	<script src="./d3.js"></script>
 
 </head>
 <body>
-<div class="left">left</div>
-<div class="right">right</div>
+<div class="left">To Do Today:</div>
 
 	<script>
-	d3.selectAll('div').on('click',function(d,i){
-		console.log('clicked');
-		d3.selectAll('.left').style('font-family','times');
-	});
-	d3.selectAll('div').attr('contentEditable',true);
-	d3.select('body').on('keyup',function(d,i,e){
-		console.log(d,i,e,this);
-		console.log(d3.event);
-		d3.select('.right').text(d3.select('.left').node().innerText);
-		if (d3.event.keyIdentifier == 'Enter'){
-			d3.select('.left').text += 'lol';
+	var index = 1;
+	var left = document.querySelector('.left');
+	left.contentEditable = true;
+	left.addEventListener('keypress',function(e){
+		if(e.keyCode === 13){
+			var item = document.createElement('div');
+			var itemText = document.createElement('span');
+			item.className = "item";
+			document.body.appendChild(item);
+			item.textContent = ++index;
+			itemText.textContent += left.textContent;
+			item.appendChild(itemText);
+			left.textContent = "";
 		}
 	})
+
 	</script>
 
 </body>
