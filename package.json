@@ -4,7 +4,12 @@
   "description": "To Do Application",
   "main": "main.js",
   "dependencies": {},
-  "devDependencies": {},
+  "devDependencies": {
+    "gulp": "^3.8.11",
+    "gulp-concat": "^2.5.2",
+    "gulp-jshint": "^1.10.0",
+    "jshint": "^2.7.0"
+  },
   "scripts": {
     "test": "start"
   },

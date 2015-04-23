@@ -1,7 +1,6 @@
 var jshint = require('gulp-jshint');
 var gulp   = require('gulp');
 var concat = require('gulp-concat');
-var uglify = require('gulp-uglify');
 var watch  = require('gulp-watch');
 
 gulp.task('jshint', function() {
@@ -13,7 +12,6 @@ gulp.task('jshint', function() {
 gulp.task('concat', function(){
   gulp.src(['./d3.js','./react.js'])
     .pipe(concat('out.js'))
-    .pipe(uglify())
     .pipe(gulp.dest('./'))
 });
 
