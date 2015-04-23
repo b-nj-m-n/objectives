@@ -48,7 +48,7 @@
 		font-family:futura;
 		border-right:1px solid black;
 	}
-	div.item span {
+	div.item div {
 		display:inline-block;
 		text-align:right;
 		transform:rotate(90deg);
@@ -70,7 +70,7 @@
 	left.addEventListener('keypress',function(e){
 		if(e.keyCode === 13){
 			var item = document.createElement('div');
-			var itemText = document.createElement('span');
+			var itemText = document.createElement('div');
 			item.className = "item";
 			document.body.appendChild(item);
 			item.textContent = ++index;
