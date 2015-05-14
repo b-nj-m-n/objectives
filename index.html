@@ -18,6 +18,8 @@
 	<meta name="msapplication-TileColor" content="#da532c">
 	<meta name="msapplication-TileImage" content="/mstile-144x144.png">
 	<meta charset="UTF-8">
+<script src="https://fb.me/react-0.13.3.js"></script>
+	<script src="https://fb.me/JSXTransformer-0.13.3.js"></script>
 	<title>Objectives App</title>
 	<style>
 	body{
@@ -59,29 +61,58 @@
 		text-align:left;
 		padding:15px;
 	}
+	button {
+		  padding:5px;
+  background-color: #dcdcdc;
+  border: 1px solid #666;
+  color:#000;
+  text-decoration:none;
+	}
 	</style>
 	<script src="./d3.js"></script>
 
 </head>
 <body>
-<div class="left">To Do Today:</div>
+<div class="left" id="left">To Do Today:</div>
 
-	<script>
-	var index = 1;
-	var left = document.querySelector('.left');
-	left.contentEditable = true;
-	left.addEventListener('keypress',function(e){
-		if(e.keyCode === 13){
-			var item = document.createElement('div');
-			var itemText = document.createElement('div');
-			item.className = "item";
-			document.body.appendChild(item);
-			item.textContent = ++index;
-			itemText.textContent += left.textContent;
-			item.appendChild(itemText);
-			left.textContent = "";
-		}
-	})
+<script type="text/jsx">
+var mountNode = document.getElementById('left');
+var TodoList = React.createClass({
+  render: function() {
+    var createItem = function(itemText, index) {
+      return <li key={index + itemText}>{itemText}</li>;
+    };
+    return <ul>{this.props.items.map(createItem)}</ul>;
+  }
+});
+var TodoApp = React.createClass({
+  getInitialState: function() {
+    return {items: [], text: ''};
+  },
+  onChange: function(e) {
+    this.setState({text: e.target.value});
+  },
+  handleSubmit: function(e) {
+    e.preventDefault();
+    var nextItems = this.state.items.concat([this.state.text]);
+    var nextText = '';
+    this.setState({items: nextItems, text: nextText});
+  },
+  render: function() {
+    return (
+      <div>
+        <h3>Today</h3>
+        <TodoList items={this.state.items} />
+        <form onSubmit={this.handleSubmit}>
+          <input onChange={this.onChange} value={this.state.text} />
+        </form>
+      </div>
+    );
+  }
+});
+
+React.render(<TodoApp />, mountNode);
+
 
 	</script>
 
