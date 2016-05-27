@@ -1,0 +1,111 @@
+body {
+  /*background: cornsilk;*/
+
+  font-family: 'BlinkMacSystemFont';
+  font-size: 1em;
+
+}
+
+::selection {
+ background-color: rgba(255,0,0,0.);
+ color: white;
+}
+
+div {
+  padding: 0;
+  margin: 0;
+}
+
+button {
+  
+  border: none;
+
+}
+
+ul > li {
+}
+
+
+input {
+ background-color: rgba(190, 180, 180, 0.0);
+ max-width: 15em;
+ overflow: ;
+ border: none;
+ outline: none;
+ font-size: 1em;
+ padding: 1em;
+}
+
+.lane {
+  display: inline-block;
+  margin: 1em;
+  border: 1px solid black;
+  background-color: rgba(200,180,180,0.0);
+  min-width: 15em;
+  vertical-align: top;
+}
+
+.lane-header {
+  background-color: rgba(190, 180, 180, 0.4);
+  overflow: auto;
+
+}
+
+.lane-name {
+  float: left;
+  padding: 1em;
+}
+
+.lane-add-note {
+  float: right;
+  margin-left: 0.5em;
+}
+
+.add-lane, .lane-add-note button {
+  /*border-bottom: 1px solid black;*/
+  background: white;
+}
+
+.notes {
+  margin: 0.5em;
+  padding-left: 0;
+  list-style: none;
+}
+
+.note {
+  margin-bottom: 0.5em;
+  max-width: 15em;
+  padding: 0.5em;
+  cursor: move;
+  transition: 0.2s;
+}
+.note:hover {
+  /*box-shadow: 0 0 0.3em .03em rgba(0,0,0,.7);*/
+  background-color:rgba(200,200,220,0.6);
+  transition: .2s;
+}
+
+.note .value {
+  /* force to use inline-block so that it gets minimum height */
+  display: inline-block;
+}
+
+.note .delete {
+  float: right;
+  background-color: rgba(0,0,0,0);
+
+  padding: 0;
+  border: none;
+
+  cursor: pointer;
+
+  visibility: hidden;
+}
+.note:hover .delete {
+  visibility: visible;
+}
+
+input {
+  padding: 0;
+  margin: 0;
+}
